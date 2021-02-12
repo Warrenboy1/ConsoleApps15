@@ -126,7 +126,7 @@ namespace ConsoleAppProject.App01
         private void OutputHeading()
         {
             Console.WriteLine("\n-------------------------------------");
-            Console.WriteLine("          Convert Miles to Feet        ");
+            Console.WriteLine("             Convert Distance          ");
             Console.WriteLine("         By Warren Frank-Danvers       ");
             Console.WriteLine("-------------------------------------\n");
 
@@ -141,10 +141,10 @@ namespace ConsoleAppProject.App01
         {
             Console.Write(input);
 
-            string value = Console.ReadLine();
+            
 
             try 
-            { 
+            {
                 return Convert.ToDouble(Console.ReadLine()); 
             } 
             catch (Exception) 
