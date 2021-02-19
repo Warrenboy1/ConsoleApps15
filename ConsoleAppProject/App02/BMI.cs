@@ -47,23 +47,23 @@ namespace ConsoleAppProject.App02
             {
                 Console.WriteLine("Your BMI is {0}. You are Underweight",BMIResult);
             }
-            if (BMIResult >= 18.5 && BMIResult <= 24.9) 
+            else if (BMIResult >= 18.5 && BMIResult <= 24.9) 
             {
                 Console.WriteLine("Your BMI is {0}. You are Normal", BMIResult);
             }
-            if (BMIResult >= 25.0 && BMIResult <= 29.9)
+            else if (BMIResult >= 25.0 && BMIResult <= 29.9)
             {
                 Console.WriteLine("Your BMI is {0}. You are Overweight", BMIResult);
             }
-            if (BMIResult >= 30.0 && BMIResult <= 34.9)
+            else if (BMIResult >= 30.0 && BMIResult <= 34.9)
             {
                 Console.WriteLine("Your BMI is {0}. You are Obese Class I", BMIResult);
             }
-            if (BMIResult >= 35.0 && BMIResult <= 39.9)
+            else if (BMIResult >= 35.0 && BMIResult <= 39.9)
             {
                 Console.WriteLine("Your BMI is {0}. You are Obese Class II", BMIResult);
             }
-            if (BMIResult >= 40.0)
+            else if (BMIResult >= 40.0)
             {
                 Console.WriteLine("Your BMI is {0}. You are Obese Class III", BMIResult);
             }
@@ -87,6 +87,10 @@ namespace ConsoleAppProject.App02
 
                 BMIResult = (Weight) / (Height * Height);
             }
+            else
+            {
+                Console.WriteLine("Please Choose Either 1. Imperial or 2. Metric Next time, thank you.");
+            }
             
         }
 
@@ -103,7 +107,7 @@ namespace ConsoleAppProject.App02
             catch (Exception)
             {
                  Console.WriteLine("Something went wrong. Make sure you input a number!");
-                    return 0;
+                    return Input(input);
                
             }
         }
