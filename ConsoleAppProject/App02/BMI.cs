@@ -21,7 +21,7 @@ namespace ConsoleAppProject.App02
 
         public void calculator()
         { 
-            OutputHeading();
+            ConsoleHelper.OutputHeading("Body Mass Index Calculator");
 
             Choice = ChooseUnits(choice);
 
@@ -111,15 +111,7 @@ namespace ConsoleAppProject.App02
                
             }
         }
-
-        private void OutputHeading()
-        {
-            Console.WriteLine("\n-------------------------------------");
-            Console.WriteLine("       Body Mass Index Calculator      ");
-            Console.WriteLine("         By Warren Frank-Danvers       ");
-            Console.WriteLine("-------------------------------------\n");
-
-        }
+        
 
         private string ChooseUnits(string prompt)
         {

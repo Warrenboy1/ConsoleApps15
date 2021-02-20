@@ -36,14 +36,14 @@ namespace ConsoleAppProject.App01
         /// </summary>
         public void convertDistance()
         { 
-            OutputHeading();
+            ConsoleHelper.OutputHeading("Distance Converter");
 
             FromUnit = SelectUnit(" Please select the from distance unit ");
             ToUnit = SelectUnit(" Please select the to distance unit ");
 
             Console.WriteLine($"\n Converting {FromUnit} to {ToUnit}");
            
-            FromDistance = InputDistance($"Please enter the number of {FromUnit} ");
+            FromDistance = ConsoleHelper.InputNumber($"Please enter the number of {FromUnit} ");
 
             CalculateDistance();
 
@@ -81,78 +81,21 @@ namespace ConsoleAppProject.App01
 
         private string SelectUnit(string prompt)
         {
-            string choice = DisplayChoices(prompt);
-            string unit = ExecuteChoice(choice);
-            Console.WriteLine($"\n you have chosen {unit}");
+            string [] choices = 
+            {
+                FEET,
+                METRES,
+                MILES
+            };
+
+            Console.WriteLine(prompt);
+            int choiceNo = ConsoleHelper.SelectChoice(choices);
+
+            string unit = choices[choiceNo - 1];
             return unit;
         }
 
-        private static string ExecuteChoice(string choice)
-        {
-            if (choice.Equals("1"))
-            {
-                return FEET;
-            }
-            else if (choice.Equals("2"))
-            {
-                return METRES;
-            }
-            else if (choice.Equals("3"))
-            {
-                return MILES;
-            }
-            else
-            {
-                Console.WriteLine("Something went wrong." +
-                    " Make sure to choose a number listed.");
-                return null;
-            }
-            
-        }
-
-        private static string DisplayChoices(string prompt)
-        {
-            Console.WriteLine();
-            Console.WriteLine($" 1. {FEET}");
-            Console.WriteLine($" 2. {METRES}");
-            Console.WriteLine($" 3. {MILES}");
-            Console.WriteLine();
-
-            Console.Write(prompt);
-            string choice = Console.ReadLine();
-            return choice;
-        }
-
-        private void OutputHeading()
-        {
-            Console.WriteLine("\n-------------------------------------");
-            Console.WriteLine("             Convert Distance          ");
-            Console.WriteLine("         By Warren Frank-Danvers       ");
-            Console.WriteLine("-------------------------------------\n");
-
-        }
-
-
-        /// <summary>
-        /// Prompt the user to input the distance in miles
-        /// Input the miles as a double number
-        /// </summary>
-        private double InputDistance(string input)
-        {
-            Console.Write(input);
-
-            
-
-            try 
-            {
-                return Convert.ToDouble(Console.ReadLine()); 
-            } 
-            catch (Exception) 
-            { 
-                Console.WriteLine("Something went wrong. Make sure you input a double number!");
-                return 0; 
-            }
-        }
+       
 
         private void OutputDistance()
         {
