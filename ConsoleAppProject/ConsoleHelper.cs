@@ -33,13 +33,54 @@ namespace ConsoleAppProject
         }
 
         /// <summary>
-        /// prompt the user to input
+        /// prompt the user to input a number
         /// </summary>
         public static double InputNumber(string prompt)
         {
-            Console.Write(prompt);
-            string value = Console.ReadLine();
-            double number = Convert.ToDouble(value);
+            double number = 0;
+            bool isValid = false;
+
+            do
+            {
+                Console.Write(prompt);
+                string value = Console.ReadLine();
+
+                try
+                {
+                    number = Convert.ToDouble(value);
+                    isValid = true;
+                }
+                catch (Exception)
+                {
+                    isValid = false;
+                    Console.WriteLine(" INVALID NUMBER !");
+                }
+            } while (!isValid);
+
+            return number;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+
+        public static double InputNumber(string prompt, double min, double max)
+        {
+            bool isValid = false;
+            double number = 0;
+
+            do
+            {
+                number = InputNumber(prompt);
+
+                if (number < min || number > max)
+                {
+                    isValid = false;
+                    Console.WriteLine($"Number must be between{min} and {max}");
+                }
+                else isValid = false;
+
+            } while (!isValid);
 
             return number;
         }
