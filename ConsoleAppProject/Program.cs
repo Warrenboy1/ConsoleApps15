@@ -14,9 +14,9 @@ namespace ConsoleAppProject
     /// </summary>
     public static class Program
     {
-        private static DistanceConverter converter = new DistanceConverter();
+        public static DistanceConverter converter = new DistanceConverter();
 
-        private static BMI calculator = new BMI();
+        public static BMI calculator = new BMI();
         public static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -30,7 +30,7 @@ namespace ConsoleAppProject
             {
                 converter.convertDistance();
             }
-            if (choiceNo == 2)
+            else if (choiceNo == 2)
             {
                 calculator.calculator();
             }

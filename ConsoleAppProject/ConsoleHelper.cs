@@ -28,7 +28,8 @@ namespace ConsoleAppProject
             // Get the user's choice
 
 
-            int choiceNo = (int)InputNumber("\n Please enter your choice > ");
+            int choiceNo = (int)InputNumber("\n Please enter your choice > ",
+                                            1, choices.Length);
             return choiceNo;
         }
 
@@ -76,9 +77,9 @@ namespace ConsoleAppProject
                 if (number < min || number > max)
                 {
                     isValid = false;
-                    Console.WriteLine($"Number must be between{min} and {max}");
+                    Console.WriteLine($"Number must be between {min} and {max}");
                 }
-                else isValid = false;
+                else isValid = true;
 
             } while (!isValid);
 
