@@ -19,16 +19,23 @@ namespace ConsoleAppProject
         public static BMI calculator = new BMI();
         public static void Main(string[] args)
         {
+            // Starts application in the color yellow
             Console.ForegroundColor = ConsoleColor.Yellow;
             
+            //Outputs the heading using parameters set
             ConsoleHelper.OutputHeading("BNU CO453 Applications Programming 2020-2021!");
 
+            // Lists choices as an array using variables inputed 
             string[] choices = { "Distance Converter", "BMI Calculator" };
-            int choiceNo = ConsoleHelper.SelectChoice(choices);
 
+            // Selects a number equivalent to the array 
+            int choiceNo = ConsoleHelper.SelectChoice("",choices);
+
+            // If the number equals a choice listed, it opens a program
+            // If else then Invalid entry
             if (choiceNo == 1)
             {
-                converter.convertDistance();
+                converter.ConvertDistance();
             }
             else if (choiceNo == 2)
             {

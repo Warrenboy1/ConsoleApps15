@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
 namespace ConsoleAppProject.App01
 {
     /// <summary>
@@ -11,96 +14,113 @@ namespace ConsoleAppProject.App01
     /// </author>
     public class DistanceConverter
     {
-        public const int FEET_IN_MILES = 5280;
-        public const double METRES_IN_MILES = 1609.34;
-        public const double FEET_IN_METRES = 3.28084;
-        public const string FEET = "feet";
-        public const string METRES = "metres";
-        public const string MILES = "miles";
+        public Dictionary<UnitsEnum, double> Distance = new Dictionary<UnitsEnum, double>();
+        public string[] Measurement = new string[]
+            {
+                EnumHelper<UnitsEnum>.GetName(UnitsEnum.FEET),
+                EnumHelper<UnitsEnum>.GetName(UnitsEnum.METER),
+                EnumHelper<UnitsEnum>.GetName(UnitsEnum.MILE)
+            };
 
+        // measurements number to be calculated from & to distance
         public double FromDistance { get; set; }
         public double ToDistance { get; set; }
-
-        public string FromUnit { get; set; }
-        public string ToUnit { get; set; }
+       
+        // What measurements are selected and put into the strings
+        public UnitsEnum FromUnit { get; set; }
+        public UnitsEnum ToUnit { get; set; }
 
         public DistanceConverter()
         {
-            FromUnit = MILES;
-            ToUnit = FEET;
+            Distance.Add(UnitsEnum.FEET, 0.000189394);
+            Distance.Add(UnitsEnum.METER, 0.000621371);
+            Distance.Add(UnitsEnum.MILE, 1);
         }
 
         /// <summary>
-        /// This method will recieve the inputs fromUnit and toUnit,
-        /// calculating the distance and output them
+        /// The main structure to use Distance Converter application
+        /// Using ConsoleHelper.cs to get information depending
+        /// on the parameter set.
         /// </summary>
-        public void convertDistance()
-        { 
+        public void ConvertDistance()
+        {
+            // Distance Converter is output as heading
             ConsoleHelper.OutputHeading("Distance Converter");
 
-            FromUnit = SelectUnit(" Please select the from distance unit ");
-            ToUnit = SelectUnit(" Please select the to distance unit ");
+            // This looks for and gets the Unit
+            GetUnit();
+
+            // Repeater checks if the ToUnit and FromUnit are the same.
+            Repeater();
 
             Console.WriteLine($"\n Converting {FromUnit} to {ToUnit}");
-           
-            FromDistance = ConsoleHelper.InputNumber($"Please enter the number of {FromUnit} ");
 
+            // Looks for an input to put into FromDistance to
+            // convert the 2 different measurements 
+            FromDistance = (double)(UnitsEnum)ConsoleHelper.InputNumber($"Please enter the" +
+                                                $" number of {FromUnit} ");
+            // Calculates the distance from the input recieved
             CalculateDistance();
 
+            // Outputs result
             OutputDistance();
         }
 
-        public void CalculateDistance()
+        /// <summary>
+        /// Gets the units from inputs to see 
+        /// what they are measured from and to
+        /// </summary>
+        public void GetUnit()
         {
-            if(FromUnit == MILES && ToUnit == FEET)
-            {
-                ToDistance = FromDistance * FEET_IN_MILES;
-            }
-            else if(FromUnit == FEET && ToUnit == MILES)
-            {
-                ToDistance = FromDistance / FEET_IN_MILES;
-            }
-            else if(FromUnit == MILES && ToUnit == METRES)
-            {
-                ToDistance = FromDistance * METRES_IN_MILES;
-            }
-            else if(FromUnit == METRES && ToUnit == MILES)
-            {
-                ToDistance = FromDistance / METRES_IN_MILES;
-            }
-            else if(FromUnit == METRES && ToUnit == FEET)
-            {
-                ToDistance = FromDistance * FEET_IN_METRES;
-            }
-            else if(FromUnit == FEET && ToUnit == METRES)
-            {
-                ToDistance = FromDistance / FEET_IN_METRES;
-            }
-            
+
+            Console.WriteLine(" Please Enter 2 different Distance Units" +
+                                " to measure from and to");
+
+            FromUnit = Distance.ElementAt(ConsoleHelper.SelectChoice(" Please select the from distance unit \n", Measurement) - 1).Key;
+            ToUnit = Distance.ElementAt(ConsoleHelper.SelectChoice(" Please select the to distance unit \n", Measurement) - 1).Key;
         }
 
-        private string SelectUnit(string prompt)
+        /// <summary>
+        /// RepeatUnit uses a do while loop incase that 
+        /// the FromUnit and ToUnit have the same information.
+        /// </summary>
+        private void Repeater()
         {
-            string [] choices = 
+            do
             {
-                FEET,
-                METRES,
-                MILES
-            };
-
-            Console.WriteLine(prompt);
-            int choiceNo = ConsoleHelper.SelectChoice(choices);
-
-            string unit = choices[choiceNo - 1];
-            return unit;
+                GetUnit();
+            } while (FromUnit == ToUnit);
         }
 
-       
+        /// <summary>
+        /// CalculateDistance Calculates what to do with the information it has recieved.
+        /// There is no other possible recalculations at this point unless more options
+        /// for calculating distances have been updated.
+        /// </summary>
+        public double CalculateDistance()
+        {
+            return Math.Round((Distance[FromUnit] / Distance[ToUnit] * FromDistance), 2);
+        }
 
+        /// <summary>
+        /// Rounds the number within {ToDistance} to 2 decimal places
+        /// and outputs the number as {Result}.
+        /// </summary>
         private void OutputDistance()
         {
+
+            //Result = ToDistance.ToString("0.##");
+
             Console.WriteLine($"\n {FromDistance} {FromUnit}" +
-                $" is {ToDistance} {ToUnit}! \n");
+                $" is {CalculateDistance()} {ToUnit}! \n");
+
         }
+    }
+
+    public enum UnitsEnum
+    {
+        [Display(Name = "Meter")]METER,
+        [Display(Name = "Feet")]FEET,
+        [Display(Name = "Mile")]MILE
     }
 }

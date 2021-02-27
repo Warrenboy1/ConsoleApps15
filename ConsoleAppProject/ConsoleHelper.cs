@@ -6,12 +6,16 @@ namespace ConsoleAppProject
 {
     public static class ConsoleHelper
     {
+        /// <summary>
+        /// using the string and depending on what app which uses OutputHeading
+        /// will display the title alongside by my name.
+        /// </summary>
         public static void OutputHeading(string title)
         {
-            Console.WriteLine("\n-------------------------------------");
-            Console.WriteLine($"{title}          ");
-            Console.WriteLine("         By Warren Frank-Danvers       ");
-            Console.WriteLine("-------------------------------------\n");
+            Console.WriteLine("\n -------------------------------------");
+            Console.WriteLine($" {title}          ");
+            Console.WriteLine("          By Warren Frank-Danvers       ");
+            Console.WriteLine(" -------------------------------------\n");
         }
 
         /// <summary>
@@ -19,7 +23,7 @@ namespace ConsoleAppProject
         /// and they can select and the choice number is returned.
         /// </summary>
 
-        public static int SelectChoice(string[] choices)
+        public static int SelectChoice(string message, string[] choices)
         {
             // Display all the choices
 
@@ -28,9 +32,10 @@ namespace ConsoleAppProject
             // Get the user's choice
 
 
-            int choiceNo = (int)InputNumber("\n Please enter your choice > ",
+            int choiceNo = (int)InputNumber($" { message}>",
                                             1, choices.Length);
             return choiceNo;
+            
         }
 
         /// <summary>
@@ -89,8 +94,7 @@ namespace ConsoleAppProject
         /// <summary>
         /// 
         /// </summary>
-        
-        private static void DisplayChoices(string[] choices)
+        public static void DisplayChoices(string[] choices)
         {
             int choiceNo = 0;
 
