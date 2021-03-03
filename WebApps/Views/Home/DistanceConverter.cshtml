@@ -1,10 +1,53 @@
-﻿
+﻿@model ConsoleAppProject.App01.DistanceConverter
+@using ConsoleAppProject.App01
 @{
-    ViewData["Title"] = "DistanceConverter";
+    ViewData["Title"] = "Distance Converter";
 }
 
-<header>
-    <h1>DistanceConverter</h1>
-
+<header class="jumbotron">
+    <h1>Distance Converter</h1>
+    <h2>by Warren Frank-Danvers</h2>
+    <p>
+        This app can be used to convert any measurement 
+        of distance from one unit of distance to another.
+    </p>
 </header>
+<section>
+    <form method="post">
+
+        <h2></h2>
+        <p>
+           
+        </p>
+        <p>
+
+            <input placeholder="Enter the Distance"
+                  value="" asp-for="@Model.FromDistance" />
+        </p>
+
+        <h3>Select the unit to convert from</h3>
+
+        <select class="form-control" asp-for="FromUnit"
+                asp-items="Html.GetEnumSelectList<UnitEnum>()">
+
+        </select>
+
+        <h3>Select the unit to convert to</h3>
+
+        <select class="form-control" asp-for="@Model.ToUnit"
+                asp-items="Html.GetEnumSelectList<UnitEnum>()">
+
+        </select>
+        <br />
+        <p>
+            <button class="btn btn-success" type="submit">Convert Distance</button>
+        </p>
+
+        
+    </form>
+    <p>
+        <h2>Result:</h2>
+        <h3>@Model.CalculateDistance()</h3>
+    </p>
+</section>
 

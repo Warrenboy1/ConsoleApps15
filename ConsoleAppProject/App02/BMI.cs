@@ -39,6 +39,9 @@ namespace ConsoleAppProject.App02
         public const double ObeseLevel2 = 39.9;
         public const double ObeseLevel3 = 40.0;
 
+        /// <summary>
+        /// Run BMI App
+        /// </summary>
         public void calculator()
         { 
             ConsoleHelper.OutputHeading("Body Mass Index Calculator");
@@ -53,7 +56,10 @@ namespace ConsoleAppProject.App02
             Console.WriteLine(HealthMessage());
             ;
         }
-
+        /// <summary>
+        /// Display BMI message
+        /// </summary>
+        /// <returns></returns>
         public string BameMessage()
         {
             StringBuilder message = new StringBuilder("\n");
@@ -65,6 +71,10 @@ namespace ConsoleAppProject.App02
             return message.ToString();
         }
 
+        /// <summary>
+        /// Display Health Message
+        /// </summary>
+        /// <returns></returns>
         public string HealthMessage()
         {
             StringBuilder message = new StringBuilder("\n");
@@ -97,6 +107,10 @@ namespace ConsoleAppProject.App02
             return message.ToString();
         }
 
+        /// <summary>
+        /// Choose between Imperial or Metric
+        /// </summary>
+        /// <param name="choice"></param>
         public void TheUnit(string choice)
         {
             if (choice.Equals(IMPERIAL))
@@ -116,6 +130,9 @@ namespace ConsoleAppProject.App02
             
         }
 
+        /// <summary>
+        /// Metric Input using weight in KG and height in Metres
+        /// </summary>
         public void MetricInput()
         {
             Console.WriteLine(" \n Enter your weight to the nearest kilogram \n Weight > ");
@@ -126,6 +143,9 @@ namespace ConsoleAppProject.App02
 
         }
 
+        /// <summary>
+        /// Imperial Input using weight in Stones & Pounds, height in Feet & Inches
+        /// </summary>
         public void ImperialInput()
         {
                 Console.WriteLine(" \n Enter your weight to the nearest stones & pounds \n Weight > ");
@@ -137,11 +157,17 @@ namespace ConsoleAppProject.App02
             Inches = (int)ConsoleHelper.InputNumber(" Enter your height in Inches > ");
         }
 
+        /// <summary>
+        /// Calculate Metric 
+        /// </summary>
         public void BMICalculateMetric()
         {
             BMIResult = (Kilograms) / (Metres * Metres);
         }
 
+        /// <summary>
+        /// Calculate Imperial
+        /// </summary>
         public void BMICalculateImperial()
         {
             Inches += Feet * InchesInFeet;
@@ -152,11 +178,12 @@ namespace ConsoleAppProject.App02
                 / (Inches * Inches);
         }
 
-
+        /// <summary>
+        /// Input changes to double
+        /// </summary>
         public int Input(string input)
         {
             Console.Write(input);
-
             try
             {
                 return (int)Convert.ToDouble(Console.ReadLine());
@@ -165,20 +192,23 @@ namespace ConsoleAppProject.App02
             {
                  Console.WriteLine("Something went wrong. Make sure you input a number!");
                     return Input(input);
-               
             }
         }
-        
 
+        /// <summary>
+        /// Use Display choices to choose units 
+        /// </summary>
         public string ChooseUnits(string prompt)
         {
             string choice = DisplayChoices(" Please Enter your choice > ");
             string unit = ExecuteChoice(choice);
             Console.WriteLine($"\n you have chosen {unit}");
             return unit;
-            
         }
 
+        /// <summary>
+        /// Displays choices Imperial and Metric
+        /// </summary>
         public string DisplayChoices(string prompt)
         {
             Console.WriteLine();
@@ -192,6 +222,9 @@ namespace ConsoleAppProject.App02
             return choice;
         }
 
+        /// <summary>
+        /// If choice equals to a certain number then return the string chosen
+        /// </summary>
         public static string ExecuteChoice(string choice)
         {
             if (choice.Equals("1"))

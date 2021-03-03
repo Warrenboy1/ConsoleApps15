@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using WebApps.Models;
 using ConsoleAppProject.App02;
+using ConsoleAppProject.App01;
 
 namespace WebApps.Controllers
 {
@@ -13,9 +14,9 @@ namespace WebApps.Controllers
             return View();
         }
 
-        public IActionResult DistanceConverter()
+        public IActionResult DistanceConverter(DistanceConverter convertDistance)
         {
-            return View();
+            return View(convertDistance);
         }
 
         [HttpGet]

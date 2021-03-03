@@ -29,7 +29,8 @@ namespace ConsoleAppProject
             string[] choices = { "Distance Converter", "BMI Calculator" };
 
             // Selects a number equivalent to the array 
-            int choiceNo = ConsoleHelper.SelectChoice("",choices);
+            int choiceNo = ConsoleHelper.SelectChoice("Select a choice"
+                ,choices);
 
             // If the number equals a choice listed, it opens a program
             // If else then Invalid entry

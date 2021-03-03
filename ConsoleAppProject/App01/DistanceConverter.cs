@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 namespace ConsoleAppProject.App01
 {
@@ -10,16 +9,16 @@ namespace ConsoleAppProject.App01
     /// output the equivalent distance in another unit (toUnit).
     /// </summary>
     /// <author>
-    /// Warren's Version 0.3
+    /// Warren's Version 0.4
     /// </author>
     public class DistanceConverter
     {
-        public Dictionary<UnitsEnum, double> Distance = new Dictionary<UnitsEnum, double>();
+        public Dictionary<UnitEnum, double> Distance = new Dictionary<UnitEnum, double>();
         public string[] Measurement = new string[]
             {
-                EnumHelper<UnitsEnum>.GetName(UnitsEnum.FEET),
-                EnumHelper<UnitsEnum>.GetName(UnitsEnum.METER),
-                EnumHelper<UnitsEnum>.GetName(UnitsEnum.MILE)
+                EnumHelper<UnitEnum>.GetName(UnitEnum.FEET),
+                EnumHelper<UnitEnum>.GetName(UnitEnum.METER),
+                EnumHelper<UnitEnum>.GetName(UnitEnum.MILE)
             };
 
         // measurements number to be calculated from & to distance
@@ -27,20 +26,18 @@ namespace ConsoleAppProject.App01
         public double ToDistance { get; set; }
        
         // What measurements are selected and put into the strings
-        public UnitsEnum FromUnit { get; set; }
-        public UnitsEnum ToUnit { get; set; }
+        public UnitEnum FromUnit { get; set; }
+        public UnitEnum ToUnit { get; set; }
 
         public DistanceConverter()
         {
-            Distance.Add(UnitsEnum.FEET, 0.000189394);
-            Distance.Add(UnitsEnum.METER, 0.000621371);
-            Distance.Add(UnitsEnum.MILE, 1);
+            Distance.Add(UnitEnum.FEET, 0.000189394);
+            Distance.Add(UnitEnum.METER, 0.000621371);
+            Distance.Add(UnitEnum.MILE, 1);
         }
 
         /// <summary>
-        /// The main structure to use Distance Converter application
-        /// Using ConsoleHelper.cs to get information depending
-        /// on the parameter set.
+        /// Run Distance Converter App
         /// </summary>
         public void ConvertDistance()
         {
@@ -57,7 +54,7 @@ namespace ConsoleAppProject.App01
 
             // Looks for an input to put into FromDistance to
             // convert the 2 different measurements 
-            FromDistance = (double)(UnitsEnum)ConsoleHelper.InputNumber($"Please enter the" +
+            FromDistance = (double)(UnitEnum)ConsoleHelper.InputNumber($"Please enter the" +
                                                 $" number of {FromUnit} ");
             // Calculates the distance from the input recieved
             CalculateDistance();
@@ -86,10 +83,10 @@ namespace ConsoleAppProject.App01
         /// </summary>
         private void Repeater()
         {
-            do
+            while (FromUnit == ToUnit)
             {
                 GetUnit();
-            } while (FromUnit == ToUnit);
+            }
         }
 
         /// <summary>
@@ -109,18 +106,9 @@ namespace ConsoleAppProject.App01
         private void OutputDistance()
         {
 
-            //Result = ToDistance.ToString("0.##");
-
             Console.WriteLine($"\n {FromDistance} {FromUnit}" +
                 $" is {CalculateDistance()} {ToUnit}! \n");
 
         }
-    }
-
-    public enum UnitsEnum
-    {
-        [Display(Name = "Meter")]METER,
-        [Display(Name = "Feet")]FEET,
-        [Display(Name = "Mile")]MILE
     }
 }
