@@ -28,8 +28,8 @@ namespace ConsoleAppProject.App02
         public int Feet { get; set; }
         public int Inches { get; set; }
         // Metric Details
-        public int Kilograms { get; set; }
-        public int Metres { get; set; }
+        public double Kilograms { get; set; }
+        public double Metres { get; set; }
 
         // Health Details
         public const double Underweight = 18.5;
@@ -64,9 +64,9 @@ namespace ConsoleAppProject.App02
         {
             StringBuilder message = new StringBuilder("\n");
 
-            message.Append("\n If you are a Black, Asian or other  ");
-            message.Append("         minority ethnic group,        ");
-            message.Append("        You have a higher risk!        ");
+            message.Append("\n If you are a Black, Asian or other");
+            message.Append("\n minority ethnic group,");
+            message.Append("\n You have a higher risk!        ");
 
             return message.ToString();
         }
@@ -78,30 +78,31 @@ namespace ConsoleAppProject.App02
         public string HealthMessage()
         {
             StringBuilder message = new StringBuilder("\n");
+            double Answer = Math.Round(BMIResult, 2);
 
-            if (BMIResult < Underweight)
+            if (Answer < Underweight)
             {
-                message.Append($" Your BMI is {BMIResult}. You are Underweight");
+                message.Append($" Your BMI is {Answer}. You are Underweight");
             }
-            else if (BMIResult >= Underweight && BMIResult <= Normal) 
+            else if (Answer >= Underweight && Answer <= Normal) 
             {
-                message.Append($" Your BMI is {BMIResult}. You are Normal");
+                message.Append($" Your BMI is {Answer}. You are Normal");
             }
-            else if (BMIResult >= Normal && BMIResult <= Overweight)
+            else if (Answer >= Normal && Answer <= Overweight)
             {
-                message.Append($" Your BMI is {BMIResult}. You are Overweight");
+                message.Append($" Your BMI is {Answer}. You are Overweight");
             }
-            else if (BMIResult >= Overweight && BMIResult <= ObeseLevel1)
+            else if (Answer >= Overweight && Answer <= ObeseLevel1)
             {
-                message.Append($" Your BMI is {BMIResult}. You are Obese Class I");
+                message.Append($" Your BMI is {Answer}. You are Obese Class I");
             }
-            else if (BMIResult >= ObeseLevel1 && BMIResult <= ObeseLevel2)
+            else if (Answer >= ObeseLevel1 && Answer <= ObeseLevel2)
             {
-                message.Append($" Your BMI is {BMIResult}. You are Obese Class II");
+                message.Append($" Your BMI is {Answer}. You are Obese Class II");
             }
-            else if (BMIResult >= ObeseLevel3)
+            else if (Answer >= ObeseLevel3)
             {
-                message.Append($" Your BMI is {BMIResult}. You are Obese Class III");
+                message.Append($" Your BMI is {Answer}. You are Obese Class III");
             }
 
             return message.ToString();
@@ -138,7 +139,7 @@ namespace ConsoleAppProject.App02
             Console.WriteLine(" \n Enter your weight to the nearest kilogram \n Weight > ");
             Kilograms = (int)ConsoleHelper.InputNumber(" Enter your weight in Kilograms > ");
 
-            Console.WriteLine(" \n Enter your weight to the nearest Metres \n Height > ");
+            Console.WriteLine(" \n Enter your height to the nearest Metres \n Height > ");
             Metres = (int)ConsoleHelper.InputNumber(" Enter your height in Metres > ");
 
         }
@@ -152,7 +153,7 @@ namespace ConsoleAppProject.App02
             Stones = (int)ConsoleHelper.InputNumber(" Enter your weight in Stones > ");
             Pounds = (int)ConsoleHelper.InputNumber(" Enter your weight in Pounds > ");
 
-                Console.WriteLine(" \n Enter your weight to the nearest Feet & Inches \n Height > ");
+                Console.WriteLine(" \n Enter your height to the nearest Feet & Inches \n Height > ");
             Feet = (int)ConsoleHelper.InputNumber(" Enter your height in Feet > ");
             Inches = (int)ConsoleHelper.InputNumber(" Enter your height in Inches > ");
         }
@@ -162,7 +163,7 @@ namespace ConsoleAppProject.App02
         /// </summary>
         public void BMICalculateMetric()
         {
-            BMIResult = (Kilograms) / (Metres * Metres);
+            BMIResult = ((double)Kilograms) / (Metres * Metres);
         }
 
         /// <summary>

@@ -29,6 +29,7 @@ namespace ConsoleAppProject.App01
         public UnitEnum FromUnit { get; set; }
         public UnitEnum ToUnit { get; set; }
 
+
         public DistanceConverter()
         {
             Distance.Add(UnitEnum.FEET, 0.000189394);
@@ -96,7 +97,8 @@ namespace ConsoleAppProject.App01
         /// </summary>
         public double CalculateDistance()
         {
-            return Math.Round((Distance[FromUnit] / Distance[ToUnit] * FromDistance), 2);
+            ToDistance = Math.Round((Distance[FromUnit] / Distance[ToUnit] * FromDistance), 2);
+            return ToDistance;
         }
 
         /// <summary>
@@ -107,7 +109,7 @@ namespace ConsoleAppProject.App01
         {
 
             Console.WriteLine($"\n {FromDistance} {FromUnit}" +
-                $" is {CalculateDistance()} {ToUnit}! \n");
+                $" is {ToDistance} {ToUnit}! \n");
 
         }
     }

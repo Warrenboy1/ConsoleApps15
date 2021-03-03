@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -32,10 +32,10 @@ namespace ConsoleAppProject
             // Get the user's choice
 
 
-            int choiceNo = (int)InputNumber($" { message}>",
+            int choiceNo = (int)InputNumber($" { message}> ",
                                             1, choices.Length);
             return choiceNo;
-            
+
         }
 
         /// <summary>
