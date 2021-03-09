@@ -34,6 +34,7 @@ namespace ConsoleAppProject
 
             int choiceNo = (int)InputNumber($" { message}> ",
                                             1, choices.Length);
+            Console.WriteLine(choiceNo);
             return choiceNo;
 
         }
