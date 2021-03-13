@@ -1,0 +1,369 @@
+
+ -------------------------------------
+ BNU CO453 Applications Programming 2020-2021!
+          By Warren Frank-Danvers
+ -------------------------------------
+
+    1.     Distance Converter
+    2.     BMI Calculator
+    3.     Student Marks
+ Select a choice > 3
+3
+
+ -------------------------------------
+ Student Marks
+          By Warren Frank-Danvers
+ -------------------------------------
+
+    1.     Add New Student
+    2.     Display List of Students With Marks & Grade
+    3.     Display Students obtaining a certain grade
+    4.     Input Marks
+    5.     Calculate Mean, Minimum and Maximum Mark
+    6.     Save file and Exit
+    7.     Exit Without Saving
+ Please choose from the list of choices > 2
+2
+FirstName       LastName                ID              Grade           Mark
+
+Bob             Somebode                2174321         X               45
+Warren          Frank-Da                4276132         X               0
+Albert          CoolGuyssss             8312893         X               0
+Nerizza         GenshinE                3132344         X               0
+Andrei          SmartGuyy               1354363         X               0
+
+
+    1.     Add New Student
+    2.     Display List of Students With Marks & Grade
+    3.     Display Students obtaining a certain grade
+    4.     Input Marks
+    5.     Calculate Mean, Minimum and Maximum Mark
+    6.     Save file and Exit
+    7.     Exit Without Saving
+ Please choose from the list of choices > 1
+1
+        Enter the First Name of student > Daniel
+        Adding new Student
+        Enter the Last Name of student > Otite
+
+        Enter the ID of the student > 00010011
+        Student: Daniel Otite with ID: 10011 has been added.
+
+
+
+    1.     Add New Student
+    2.     Display List of Students With Marks & Grade
+    3.     Display Students obtaining a certain grade
+    4.     Input Marks
+    5.     Calculate Mean, Minimum and Maximum Mark
+    6.     Save file and Exit
+    7.     Exit Without Saving
+ Please choose from the list of choices > 1
+1
+        Enter the First Name of student > Michael
+        Adding new Student
+        Enter the Last Name of student > Otite
+
+        Enter the ID of the student > 43724902
+        Student: Michael Otite with ID: 43724902 has been added.
+
+
+
+    1.     Add New Student
+    2.     Display List of Students With Marks & Grade
+    3.     Display Students obtaining a certain grade
+    4.     Input Marks
+    5.     Calculate Mean, Minimum and Maximum Mark
+    6.     Save file and Exit
+    7.     Exit Without Saving
+ Please choose from the list of choices > 4
+4
+        Enter the First Name of student > Daniel
+Enter the Mark for Daniel87
+
+
+    1.     Add New Student
+    2.     Display List of Students With Marks & Grade
+    3.     Display Students obtaining a certain grade
+    4.     Input Marks
+    5.     Calculate Mean, Minimum and Maximum Mark
+    6.     Save file and Exit
+    7.     Exit Without Saving
+ Please choose from the list of choices > 4
+4
+        Enter the First Name of student > Michael
+Enter the Mark for Michael65
+
+
+    1.     Add New Student
+    2.     Display List of Students With Marks & Grade
+    3.     Display Students obtaining a certain grade
+    4.     Input Marks
+    5.     Calculate Mean, Minimum and Maximum Mark
+    6.     Save file and Exit
+    7.     Exit Without Saving
+ Please choose from the list of choices > 2
+2
+FirstName       LastName                ID              Grade           Mark
+
+Bob             Somebode                2174321         X               45
+Warren          Frank-Da                4276132         X               0
+Albert          CoolGuyssss             8312893         X               0
+Nerizza         GenshinE                3132344         X               0
+Andrei          SmartGuyy               1354363         X               0
+Daniel          Otite           10011           A               87
+Michael         Otite           43724902                B               65
+
+
+    1.     Add New Student
+    2.     Display List of Students With Marks & Grade
+    3.     Display Students obtaining a certain grade
+    4.     Input Marks
+    5.     Calculate Mean, Minimum and Maximum Mark
+    6.     Save file and Exit
+    7.     Exit Without Saving
+ Please choose from the list of choices > 1
+1
+        Enter the First Name of student > Cup
+        Adding new Student
+        Enter the Last Name of student > Da-Frank
+
+        Enter the ID of the student > 742489032
+        Student: Cup Da-Frank with ID: 742489032 has been added.
+
+
+
+    1.     Add New Student
+    2.     Display List of Students With Marks & Grade
+    3.     Display Students obtaining a certain grade
+    4.     Input Marks
+    5.     Calculate Mean, Minimum and Maximum Mark
+    6.     Save file and Exit
+    7.     Exit Without Saving
+ Please choose from the list of choices > 4
+4
+        Enter the First Name of student > Cup
+Enter the Mark for Cup23
+
+
+    1.     Add New Student
+    2.     Display List of Students With Marks & Grade
+    3.     Display Students obtaining a certain grade
+    4.     Input Marks
+    5.     Calculate Mean, Minimum and Maximum Mark
+    6.     Save file and Exit
+    7.     Exit Without Saving
+ Please choose from the list of choices > 1
+1
+        Enter the First Name of student > Kit-Kat
+        Adding new Student
+        Enter the Last Name of student > Bottle
+
+        Enter the ID of the student > 31342425
+        Student: Kit-Kat Bottle with ID: 31342425 has been added.
+
+
+
+    1.     Add New Student
+    2.     Display List of Students With Marks & Grade
+    3.     Display Students obtaining a certain grade
+    4.     Input Marks
+    5.     Calculate Mean, Minimum and Maximum Mark
+    6.     Save file and Exit
+    7.     Exit Without Saving
+ Please choose from the list of choices > 1
+1
+        Enter the First Name of student > Phone
+        Adding new Student
+        Enter the Last Name of student > Charger
+
+        Enter the ID of the student > 4382eno32
+ INVALID NUMBER !
+
+        Enter the ID of the student > 4252212
+        Student: Phone Charger with ID: 4252212 has been added.
+
+
+
+    1.     Add New Student
+    2.     Display List of Students With Marks & Grade
+    3.     Display Students obtaining a certain grade
+    4.     Input Marks
+    5.     Calculate Mean, Minimum and Maximum Mark
+    6.     Save file and Exit
+    7.     Exit Without Saving
+ Please choose from the list of choices > 2
+2
+FirstName       LastName                ID              Grade           Mark
+
+Bob             Somebode                2174321         X               45
+Warren          Frank-Da                4276132         X               0
+Albert          CoolGuyssss             8312893         X               0
+Nerizza         GenshinE                3132344         X               0
+Andrei          SmartGuyy               1354363         X               0
+Daniel          Otite           10011           A               87
+Michael         Otite           43724902                B               65
+Cup             Da-Frank                742489032               F               23
+Kit-Kat         Bottle          31342425                X               0
+Phone           Charger         4252212         X               0
+
+
+    1.     Add New Student
+    2.     Display List of Students With Marks & Grade
+    3.     Display Students obtaining a certain grade
+    4.     Input Marks
+    5.     Calculate Mean, Minimum and Maximum Mark
+    6.     Save file and Exit
+    7.     Exit Without Saving
+ Please choose from the list of choices > 4
+4
+        Enter the First Name of student > Warren
+Enter the Mark for Warren99
+
+
+    1.     Add New Student
+    2.     Display List of Students With Marks & Grade
+    3.     Display Students obtaining a certain grade
+    4.     Input Marks
+    5.     Calculate Mean, Minimum and Maximum Mark
+    6.     Save file and Exit
+    7.     Exit Without Saving
+ Please choose from the list of choices > 4
+4
+        Enter the First Name of student > Albert
+Enter the Mark for Albert80
+
+
+    1.     Add New Student
+    2.     Display List of Students With Marks & Grade
+    3.     Display Students obtaining a certain grade
+    4.     Input Marks
+    5.     Calculate Mean, Minimum and Maximum Mark
+    6.     Save file and Exit
+    7.     Exit Without Saving
+ Please choose from the list of choices > 4
+4
+        Enter the First Name of student > Nerizza
+Enter the Mark for Nerizza70
+
+
+    1.     Add New Student
+    2.     Display List of Students With Marks & Grade
+    3.     Display Students obtaining a certain grade
+    4.     Input Marks
+    5.     Calculate Mean, Minimum and Maximum Mark
+    6.     Save file and Exit
+    7.     Exit Without Saving
+ Please choose from the list of choices > 4
+4
+        Enter the First Name of student > Andrei
+Enter the Mark for Andrei60
+
+
+    1.     Add New Student
+    2.     Display List of Students With Marks & Grade
+    3.     Display Students obtaining a certain grade
+    4.     Input Marks
+    5.     Calculate Mean, Minimum and Maximum Mark
+    6.     Save file and Exit
+    7.     Exit Without Saving
+ Please choose from the list of choices > 2
+2
+FirstName       LastName                ID              Grade           Mark
+
+Bob             Somebode                2174321         X               45
+Warren          Frank-Da                4276132         A               99
+Albert          CoolGuyssss             8312893         A               80
+Nerizza         GenshinE                3132344         A               70
+Andrei          SmartGuyy               1354363         B               60
+Daniel          Otite           10011           A               87
+Michael         Otite           43724902                B               65
+Cup             Da-Frank                742489032               F               23
+Kit-Kat         Bottle          31342425                X               0
+Phone           Charger         4252212         X               0
+
+
+    1.     Add New Student
+    2.     Display List of Students With Marks & Grade
+    3.     Display Students obtaining a certain grade
+    4.     Input Marks
+    5.     Calculate Mean, Minimum and Maximum Mark
+    6.     Save file and Exit
+    7.     Exit Without Saving
+ Please choose from the list of choices > 4
+4
+        Enter the First Name of student > Kit-Kat
+Enter the Mark for Kit-Kat35
+
+
+    1.     Add New Student
+    2.     Display List of Students With Marks & Grade
+    3.     Display Students obtaining a certain grade
+    4.     Input Marks
+    5.     Calculate Mean, Minimum and Maximum Mark
+    6.     Save file and Exit
+    7.     Exit Without Saving
+ Please choose from the list of choices > 4
+4
+        Enter the First Name of student > Phone
+Enter the Mark for Phone56
+
+
+    1.     Add New Student
+    2.     Display List of Students With Marks & Grade
+    3.     Display Students obtaining a certain grade
+    4.     Input Marks
+    5.     Calculate Mean, Minimum and Maximum Mark
+    6.     Save file and Exit
+    7.     Exit Without Saving
+ Please choose from the list of choices > 2
+2
+FirstName       LastName                ID              Grade           Mark
+
+Bob             Somebode                2174321         X               45
+Warren          Frank-Da                4276132         A               99
+Albert          CoolGuyssss             8312893         A               80
+Nerizza         GenshinE                3132344         A               70
+Andrei          SmartGuyy               1354363         B               60
+Daniel          Otite           10011           A               87
+Michael         Otite           43724902                B               65
+Cup             Da-Frank                742489032               F               23
+Kit-Kat         Bottle          31342425                F               35
+Phone           Charger         4252212         C               56
+
+
+    1.     Add New Student
+    2.     Display List of Students With Marks & Grade
+    3.     Display Students obtaining a certain grade
+    4.     Input Marks
+    5.     Calculate Mean, Minimum and Maximum Mark
+    6.     Save file and Exit
+    7.     Exit Without Saving
+ Please choose from the list of choices > 3
+3
+Grade A 40% Count 4
+Grade B 20% Count 2
+Grade C 10% Count 1
+Grade D 10% Count 1
+Grade F 20% Count 2
+
+
+    1.     Add New Student
+    2.     Display List of Students With Marks & Grade
+    3.     Display Students obtaining a certain grade
+    4.     Input Marks
+    5.     Calculate Mean, Minimum and Maximum Mark
+    6.     Save file and Exit
+    7.     Exit Without Saving
+ Please choose from the list of choices > 5
+5
+Mean:62 Minimum:23      Maximum:99
+
+    1.     Add New Student
+    2.     Display List of Students With Marks & Grade
+    3.     Display Students obtaining a certain grade
+    4.     Input Marks
+    5.     Calculate Mean, Minimum and Maximum Mark
+    6.     Save file and Exit
+    7.     Exit Without Saving
+ Please choose from the list of choices >
