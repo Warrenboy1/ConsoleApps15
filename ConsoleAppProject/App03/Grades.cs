@@ -1,6 +1,4 @@
 ﻿using System.ComponentModel;
-using System;
-using System.Collections.Generic;
 
 namespace ConsoleAppProject.App03
 {
@@ -13,60 +11,11 @@ namespace ConsoleAppProject.App03
     /// </summary>
 
 
-    public class StudentMarks
-    {
-
-        
-        public string[] Choices = new string[]
-        {
-            "Add New Student",
-            "Display List of Students With Marks & Grade",
-            "Display Students obtaining a certain grade"
-        };
-        public void RunGradesApp()
-        {
-            // Distance Converter is output as heading
-            ConsoleHelper.OutputHeading("Student Marks");
-
-            var test = false;
-            while (!test)
-            {
-                int Choice = ConsoleHelper.SelectChoice("test", Choices);
-                 /// Return /confirm the choice made alongside the description.
-                /// 
-                if (Choice == 1)
-                {
-                AddNewStudent();
-                }
-                else if (Choice == 2)
-                {
-                DisplayListStudents();
-                }
-                else if (Choice == 3)
-                {
-                DisplayGradeProfile();
-                }
-            }
-            
-        }
-
-        private void DisplayGradeProfile()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void DisplayListStudents()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void AddNewStudent()
-        {
-            throw new NotImplementedException();
-        }
+    
 
         public enum Grades
         {
+            X,
             [Description("No Grade")]
             NULL,
             [Description("Fail")]
@@ -79,7 +28,7 @@ namespace ConsoleAppProject.App03
             B, 
             [Description("First Class")]
             A
+            
         }
     }
     
-}

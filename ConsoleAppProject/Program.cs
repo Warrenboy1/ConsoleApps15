@@ -47,6 +47,7 @@ namespace ConsoleAppProject
             }
             else if (choiceNo == 3)
             {
+                
                 Marks.RunGradesApp();
             }
             else Console.WriteLine("Invalid Entry!");

@@ -105,5 +105,29 @@ namespace ConsoleAppProject
                 Console.WriteLine($"    {choiceNo}.     {choice}");
             }
         }
+
+        public static string InputString(string prompt)
+        {
+
+            
+           
+            
+
+                Console.WriteLine($"{prompt}");
+                string pop = Console.ReadLine();
+
+                if (!(string.IsNullOrEmpty(pop)))
+                {
+                    
+                    return pop;
+                }
+                else 
+
+
+            
+
+            return prompt;
+
+        }
     }
 }
