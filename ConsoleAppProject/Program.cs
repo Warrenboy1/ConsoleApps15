@@ -1,6 +1,7 @@
 ﻿using ConsoleAppProject.App01;
 using ConsoleAppProject.App02;
 using ConsoleAppProject.App03;
+using ConsoleAppProject.App04;
 using System;
 
 namespace ConsoleAppProject
@@ -20,6 +21,9 @@ namespace ConsoleAppProject
         public static BMI calculator = new BMI();
 
         public static StudentMarks Marks = new StudentMarks();
+
+        public static NetworkApp App04 = new NetworkApp();
+
         public static void Main(string[] args)
         {
             // Starts application in the color yellow
@@ -29,7 +33,7 @@ namespace ConsoleAppProject
             ConsoleHelper.OutputHeading("BNU CO453 Applications Programming 2020-2021!");
 
             // Lists choices as an array using variables inputed 
-            string[] choices = { "Distance Converter", "BMI Calculator", "Student Marks" };
+            string[] choices = { "Distance Converter", "BMI Calculator", "Student Marks", "Social Network" };
 
             // Selects a number equivalent to the array 
             int choiceNo = ConsoleHelper.SelectChoice("Select a choice"
@@ -49,6 +53,10 @@ namespace ConsoleAppProject
             {
                 
                 Marks.RunGradesApp();
+            }
+            else if (choiceNo == 4)
+            {
+                App04.DisplayMenu();
             }
             else Console.WriteLine("Invalid Entry!");
 

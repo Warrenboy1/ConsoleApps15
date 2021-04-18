@@ -19,6 +19,17 @@ namespace ConsoleAppProject
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="title"></param>
+        public static void OutputTitle(string title)
+        {
+            Console.WriteLine("\n -------------------------------------");
+            Console.WriteLine($" {title}          ");
+            Console.WriteLine(" -------------------------------------\n");
+        }
+
+        /// <summary>
         /// This method displays a list of numbered choices to the user,
         /// and they can select and the choice number is returned.
         /// </summary>
